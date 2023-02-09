@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\adminController;
+use App\Http\Controllers\jenisTelurController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,3 +26,11 @@ Route::post('/admin', [adminController::class, 'create']);
 Route::get('/admin/update/{id}', [adminController::class, 'updateview']);
 Route::delete('/admin/{id}', [adminController::class, 'destroy']);
 Route::put('/admin/{id}', [adminController::class, 'update']);
+
+// Jenis Telur Route 
+Route::get('/jenis-telur', [jenisTelurController::class, 'index']);
+Route::get('/jenis-telur/create', [jenisTelurController::class, 'createview']);
+Route::post('/jenis-telur', [jenisTelurController::class, 'create']);
+Route::get('/jenis-telur/update/{id}', [jenisTelurController::class, 'updateview']);
+Route::delete('/jenis-telur/{id}', [jenisTelurController::class, 'destroy']);
+Route::put('/jenis-telur/{id}', [jenisTelurController::class, 'update']);

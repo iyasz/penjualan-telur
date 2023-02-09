@@ -47,7 +47,7 @@ class adminController extends Controller
 
         return redirect(('/admin'));
     }
-
+    
     public function update($id, Request $request)
     {
         $admin = admin::find($id);

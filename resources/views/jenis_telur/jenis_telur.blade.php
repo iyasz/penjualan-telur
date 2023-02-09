@@ -5,7 +5,7 @@
         <div class="col-12 mt-5">
             <h1>Jenis Telur Room</h1>
             <div class="text-end">
-                <a href="/admin/create" class="btn btn-primary">Create Jenis Telur</a>
+                <a href="/jenis-telur/create" class="btn btn-primary">Create Jenis Telur</a>
             </div>
         </div>
     </div>

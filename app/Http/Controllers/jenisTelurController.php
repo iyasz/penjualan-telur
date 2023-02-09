@@ -48,4 +48,16 @@ class jenisTelurController extends Controller
 
         return redirect('/jenis-telur');
     }
+
+    public function restoreview()
+    {
+        $jenis = jenis_telur::onlyTrashed()->get();
+        return view('jenis_telur.softdeletes', ['jenis' => $jenis]);
+    }
+
+    public function restore($id)
+    {
+        $jenis = jenis_telur::withTrashed()->where('id', $id)->restore();
+        return redirect('/jenis-telur');
+    }
 }

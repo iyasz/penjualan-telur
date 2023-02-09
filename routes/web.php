@@ -34,3 +34,5 @@ Route::post('/jenis-telur', [jenisTelurController::class, 'create']);
 Route::get('/jenis-telur/update/{id}', [jenisTelurController::class, 'updateview']);
 Route::delete('/jenis-telur/{id}', [jenisTelurController::class, 'destroy']);
 Route::put('/jenis-telur/{id}', [jenisTelurController::class, 'update']);
+Route::get('/jenis-telur/restore/', [jenisTelurController::class, 'restoreview']);
+Route::post('/jenis-telur/{id}', [jenisTelurController::class, 'restore']);

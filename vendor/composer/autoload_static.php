@@ -513,7 +513,7 @@ class ComposerStaticInit5fc67162d54f21f22adeb264be520068
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\adminController' => __DIR__ . '/../..' . '/app/Http/Controllers/adminController.php',
-        'App\\Http\\Controllers\\jenis_telur' => __DIR__ . '/../..' . '/app/Http/Controllers/jenis_telur.php',
+        'App\\Http\\Controllers\\jenisTelurController' => __DIR__ . '/../..' . '/app/Http/Controllers/jenisTelurController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',

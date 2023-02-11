@@ -3,6 +3,7 @@
 use App\Http\Controllers\adminController;
 use App\Http\Controllers\jenisTelurController;
 use App\Http\Controllers\telurController;
+use App\Http\Controllers\transaksiController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -45,5 +46,12 @@ Route::post('/telur', [telurController::class, 'create']);
 Route::get('/telur/update/{id}', [telurController::class, 'updateview']);
 Route::delete('/telur/{id}', [telurController::class, 'destroy']);
 Route::put('/telur/{id}', [telurController::class, 'update']);
-// Route::get('/telur/restore/', [telurController::class, 'restoreview']);
-// Route::post('/telur/{id}', [telurController::class, 'restore']);
+
+// Transaksi Route 
+Route::get('/transaksi', [transaksiController::class, 'index']);
+Route::get('/transaksi/create', [transaksiController::class, 'createview']);
+Route::post('/transaksi', [transaksiController::class, 'create']);
+Route::get('/transaksi/update/{id}', [transaksiController::class, 'updateview']);
+Route::delete('/transaksi/{id}', [transaksiController::class, 'destroy']);
+Route::put('/transaksi/{id}', [transaksiController::class, 'update']);
+

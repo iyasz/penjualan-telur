@@ -47,7 +47,7 @@
                   <a class="nav-link me-3" href="/jenis-telur">Jenis Telur</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link me-3" href="transaksi">Transaksi</a>
+                  <a class="nav-link me-3" href="/transaksi">Transaksi</a>
                 </li>
               </ul>
             </div>

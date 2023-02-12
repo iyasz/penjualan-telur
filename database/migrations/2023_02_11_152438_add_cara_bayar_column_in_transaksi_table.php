@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('transaksi', function (Blueprint $table) {
-            $table->enum('cara_bayar', ['1', '2'])->required()->after('bukti_transaksi');
+            $table->enum('cara_bayar', ['1', '2'])->after('bukti_transaksi');
             
         });
     }

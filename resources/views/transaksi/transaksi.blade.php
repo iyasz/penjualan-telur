@@ -5,7 +5,7 @@
         <div class="col-12 mt-5">
             <h1>Transaksi Room</h1>
             <div class="text-end">
-                <a href="/telur/create" class="btn btn-primary">Create Transaksi</a>
+                <a href="/transaksi/create" class="btn btn-primary">Create Transaksi</a>
             </div>
         </div>
     </div>
@@ -17,8 +17,7 @@
                         <th>#</th>
                         <th>No Invoice</th>
                         <th>Nama Pemesanan</th>
-                        <th>Status</th>
-                        <th>Harga Total</th>
+                        <th>Tanggal Transaksi</th>
                         <th></th>
                     </tr>
                 </thead>
@@ -29,8 +28,7 @@
                         <td>{{ $loop->iteration}}</td>
                         <td>{{$data->no_trx}}</td>
                         <td>{{$data->nama}}</td>
-                        <td>@if($data->status == 1)Baik @elseif($data->status == 2) Pecah @else Busuk @endif</td>
-                        <td>{{$data->harga_total}}</td>
+                        <td>{{ date("d M Y", strtotime($data->tgl_trx)) }}</td>
                         <td class="d-flex ">
                             <form action="/transaksi/{{$data->id}}" method="post">
                                 @csrf

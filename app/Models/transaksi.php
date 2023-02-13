@@ -12,4 +12,9 @@ class transaksi extends Model
     public $timestamps = FALSE;
 
     protected $guarded = [];
+
+    public function detail()
+    {
+        return $this->hasMany(detailTransaksi::class, 'transaksi_id', 'id');
+    }
 }

@@ -15,7 +15,8 @@ return new class extends Migration
     {
         Schema::create('detail_transaksi', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('transaksi_id');
+            $table->unsignedBigInteger('transaksi_id')->nullable(); 
+            $table->foreign('transaksi_id')->references('id')->on('transaksi')->onDelete('cascade')->onUpdate('cascade');
             $table->string('jumlah', 250)->required();
             $table->string('total_detail', 250)->required();
 

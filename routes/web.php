@@ -59,7 +59,7 @@ Route::put('/transaksi/{id}', [transaksiController::class, 'update']);
 //Detail Transaksi Route 
 Route::get('/detail-transaksi', [detailTransaksiController::class, 'index']);
 Route::get('/detail-transaksi/{id}', [detailTransaksiController::class, 'createview']);
-Route::post('/detail-transaksi', [detailTransaksiController::class, 'create']);
+Route::post('/detail-transaksi/{id}', [detailTransaksiController::class, 'create']);
 Route::get('/detail-transaksi/update/{id}', [detailTransaksiController::class, 'updateview']);
 Route::delete('/detail-transaksi/{id}', [detailTransaksiController::class, 'destroy']);
 Route::put('/detail-transaksi/{id}', [detailTransaksiController::class, 'update']);

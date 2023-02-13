@@ -9,8 +9,7 @@
                         @csrf
                         <div class="mt-2 mb-3">
                             <label class="mb-2">Nama Lengkap Pemesanan :</label>
-                            <input type="hidden" class="form-control" id="">
-                            <input type="text" name="nama" class="form-control" id="">
+                            <input type="text" name="nama" class="form-control" autocomplete="off" id="">
                         </div>
                         <div class="text-end">
                             <button name="submit" class="btn btn-primary">Submit</button>

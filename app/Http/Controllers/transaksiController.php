@@ -29,4 +29,11 @@ class transaksiController extends Controller
 
         return redirect('/detail-transaksi/'.$trx_id);
     }
+
+    public function update($id, Request $request)
+    {
+        $trx = transaksi::find($id);
+        $trx->update($request->except('_token', 'submit'));
+        return redirect('/transaksi');
+    }
 }

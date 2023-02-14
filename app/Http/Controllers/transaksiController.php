@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\transaksi;
 use Carbon\Carbon;
+use App\Models\transaksi;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 
 class transaksiController extends Controller
@@ -21,6 +22,8 @@ class transaksiController extends Controller
 
     public function create(Request $request)
     {
+
+        
         $transaki = 'TRX/EGG-STORE/'.date('Ymd').random_int(10000,99999);
         $request['no_trx'] = $transaki;
         $request['tgl_trx'] = Carbon::now();
@@ -32,8 +35,14 @@ class transaksiController extends Controller
 
     public function update($id, Request $request)
     {
+        $imgExtension = $request->file('bukti_transaksi')->getClientOriginalExtension();
+        $imgName = "EGG-BUKTI-PEMBAYARAN".'-'. Str::random(20).$imgExtension;
+        $request->file('bukti_transaksi')->storeAs('bukti-trx', $imgName);
+
+        $request['bukti_transaksi'] = $imgName;
+
         $trx = transaksi::find($id);
-        $trx->update($request->except('_token', 'submit'));
+        $trx->update($request->except('_token', 'submit', 'bukti_transaksi'));
         return redirect('/transaksi');
     }
 }

@@ -1,4 +1,6 @@
 @extends('layout.mainlayout')
+@section('ictr', 'active-icon')
+@section('tr', 'active')
 
 @section('content')
     <div class="row justify-content-center">
@@ -90,7 +92,7 @@
                         </table>
                     </div>
 
-                    <form action="/transaksi/{{ $transaksi->id }}" method="post">
+                    <form action="/transaksi/{{ $transaksi->id }}" enctype="multipart/form-data" method="post">
                         @csrf
                         @method('put')
                         <div class="mt-2 mb-3">
@@ -112,15 +114,18 @@
                         </div>
                         <div class="mt-2 mb-3">
                             <label class="mb-2">Harga Total :</label>
-                            <input type="number" class="form-control" readonly value="{{ $hargaTotal }}" name="harga_total">
+                            <input type="text" class="form-control" readonly value="{{ number_format($hargaTotal) }}">
+                            <input type="hidden" class="form-control" id="totalAllDetail" readonly value="{{ $hargaTotal }}" name="harga_total">
                         </div>
                         <div class="mt-2 mb-3">
                             <label class="mb-2">Sejumlah :</label>
-                            <input type="number" class="form-control" name="uang_masuk">
+                            <input type="currency" id="rupiah" class="form-control" >
+                            <input type="hidden" id="jumlahBayar" class="form-control" name="uang_masuk">
+                            {{-- <input type="text" id="rupiahCalc" class="form-control" name="uang_masuk"> --}}
                         </div>
                         <div class="mt-2 mb-3">
                             <label class="mb-2">Kembalian :</label>
-                            <input type="number" readonly class="form-control" name="kembalian">
+                            <input type="text" id="kembalianBayar" readonly class="form-control" name="kembalian">
                         </div>
                         <div class="mt-2 mb-3">
                             <label class="mb-2">Bukti Transaksi :</label>

@@ -41,7 +41,7 @@ $(document).ready(function(){
 
 // total in add pemesanan 
 
-$('#jmlhTelur').on('keyup', function(){
+$('#jmlhTelur').on('keyup', function() {
     let hargaInput = $('#hargaPerTelur').val()
     // let totalHarga = $('#total_harga').val()
     let calcJmlhHarga = $(this).val() * hargaInput;
@@ -49,6 +49,7 @@ $('#jmlhTelur').on('keyup', function(){
 })
 
 // end total 
+
 
 // function password_show_hide() {
 //     var x = document.getElementById("inputPassword");
@@ -189,9 +190,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 // Rupiah Convert Input 
 
-var rupiah = document.getElementById("total_harga");
-var rupiahCalc = document.getElementById("rupiahCalc");
-var jmlhTelur = document.getElementById("jmlhTelur");
+var rupiah = document.getElementById("rupiah");
+var rupiahCalc = document.getElementById("jumlahBayar");
 
 rupiah.addEventListener("keyup", function(e) {
   // tambahkan 'Rp.' pada saat form di ketik
@@ -224,11 +224,19 @@ rupiah.addEventListener("keyup", function() {
     rupiahCalc.value = rupiahCalc.value.replace(/,/g, "");
 });
 
-
-
-
-
 // End Rupiah Convert Input 
+
+// jumlah kembalian
+
+$('#rupiah').on('keyup', function() {
+    let hargaTotaldetail = $('#totalAllDetail').val()
+    let jumlahBayar = $('#jumlahBayar').val()
+    let calcJmlhKembali = jumlahBayar - hargaTotaldetail;
+
+    $('#kembalianBayar').val(calcJmlhKembali)
+})
+
+// end jumlah kembalian
 
 // login
 

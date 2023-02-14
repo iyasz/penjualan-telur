@@ -1,5 +1,8 @@
 @extends('layout.mainlayout')
 
+@section('ictlr', 'active-icon')
+@section('tlr', 'active')
+
 @section('content')
     <div class="row">
         <div class="col-12 mt-5">

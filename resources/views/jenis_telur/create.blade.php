@@ -1,5 +1,8 @@
 @extends('layout.mainlayout')
 
+@section('icjns', 'active-icon')
+@section('jns', 'active')
+
 @section('content')
     <div class="row justify-content-center">
         <div class="col-lg-7">

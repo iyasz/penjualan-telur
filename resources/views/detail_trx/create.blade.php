@@ -7,11 +7,11 @@
                 <div class="card-body">
                     <div class="mt-2 mb-3">
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                            data-bs-target="#staticBackdrop">Tambahkan Pesanan</button>
+                            data-bs-target="#modalCreateDetail">Tambahkan Pesanan</button>
 
                         <!-- Modal -->
-                        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
-                            tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal fade" id="modalCreateDetail" data-bs-backdrop="static" data-bs-keyboard="false"
+                            tabindex="9999" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered">
                                 <div class="modal-content">
                                     <div class="modal-header">
@@ -76,7 +76,11 @@
                                         <td>{{ $data->jumlah }}</td>
                                         <td>{{ $data->total_detail }}</td>
                                         <td>
-                                            <button class="btn btn-danger btn-sm">Delete</button>
+                                            <form action="/detail-transaksi/{{$data->id}}/{{ $transaksi->id }}" method="post">
+                                                @csrf
+                                                @method('delete')
+                                                <button class="btn btn-danger btn-sm">Delete</button>
+                                            </form>
                                         </td>
 
                                     </tr>

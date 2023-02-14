@@ -1,4 +1,6 @@
 @extends('layout.mainlayout')
+@section('ictr', 'active-icon')
+@section('tr', 'active')
 
 @section('content')
     <div class="row justify-content-center">

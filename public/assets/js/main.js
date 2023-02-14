@@ -144,33 +144,46 @@ $('#jmlhTelur').on('keyup', function(){
 
 // end swiper js
 
+// live search bootstrap 
+
+$(document).ready(function(){
+    $("#liveSearch").on("keyup", function() {
+      var value = $(this).val().toLowerCase();
+      $("#tableSearch tr").filter(function() {
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+      });
+    });
+  });
+
+// end live search 
+
 // sidebars
-// document.addEventListener("DOMContentLoaded", function (event) {
-//     const showNavbar = (toggleId, navId, bodyId, headerId) => {
-//         const toggle = document.getElementById(toggleId),
-//             nav = document.getElementById(navId),
-//             bodypd = document.getElementById(bodyId),
-//             headerpd = document.getElementById(headerId);
+document.addEventListener("DOMContentLoaded", function (event) {
+    const showNavbar = (toggleId, navId, bodyId, headerId) => {
+        const toggle = document.getElementById(toggleId),
+            nav = document.getElementById(navId),
+            bodypd = document.getElementById(bodyId),
+            headerpd = document.getElementById(headerId);
 
-//         // Validate that all variables exist
-//         if (toggle && nav && bodypd && headerpd) {
-//             toggle.addEventListener("click", () => {
-//                 // show navbar
-//                 nav.classList.toggle("show");
-//                 // change icon
-//                 toggle.classList.toggle("bx-x");
-//                 // add padding to body
-//                 bodypd.classList.toggle("body-pd");
-//                 // add padding to header
-//                 headerpd.classList.toggle("body-pd");
-//             });
-//         }
-//     };
+        // Validate that all variables exist
+        if (toggle && nav && bodypd && headerpd) {
+            toggle.addEventListener("click", () => {
+                // show navbar
+                nav.classList.toggle("showNav");
+                // change icon
+                toggle.classList.toggle("bx-x");
+                // add padding to body
+                bodypd.classList.toggle("body-pd");
+                // add padding to header
+                headerpd.classList.toggle("body-pd");
+            });
+        }
+    };
 
-//     showNavbar("header-toggle", "nav-bar", "body-pd", "header");
+    showNavbar("header-toggle", "nav-bar", "body-pd", "header");
 
-//     // Your code to run since DOM is loaded and ready
-// });
+    // Your code to run since DOM is loaded and ready
+});
 
 // end sidebasr
 

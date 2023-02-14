@@ -1,5 +1,7 @@
 @extends('layout.mainlayout')
-
+@section('ictr', 'active-icon')
+@section('tr', 'active')
+    
 @section('content')
     <div class="row">
         <div class="col-12 mt-5">
@@ -10,10 +12,23 @@
         </div>
     </div>
     <div class="row justify-content-center mt-5">
+        <div class="row">
+            <div class="col-lg-4">
+                <input type="text" id="liveSearch" class="form-control">
+            </div>
+        </div>
         <div class="col-lg-12">
-            <table class="table mt-5">
-                <thead>
-                    <tr>
+            <div class="parentTable">
+                <div class="headerTable bg-white mb-0 mt-4">
+                    <div class="text-end">
+                        <button>anime</button>
+                    </div>
+                </div>
+                <div class="table-responsive">
+
+                    <table class="table">
+                    <thead>
+                        <tr >
                         <th>#</th>
                         <th>No Invoice</th>
                         <th>Nama Pemesanan</th>
@@ -21,10 +36,10 @@
                         <th></th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody class="bg-white" id="tableSearch">
                     @foreach ($transaksi as $data)
-                        
-                    <tr>
+                    
+                    <tr class="text-gray">
                         <td>{{ $loop->iteration}}</td>
                         <td>{{$data->no_trx}}</td>
                         <td>{{$data->nama}}</td>
@@ -41,6 +56,8 @@
                     @endforeach
                 </tbody>
             </table>
+            </div>
+        </div>
         </div>
     </div>
 @endsection

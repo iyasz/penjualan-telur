@@ -57,11 +57,11 @@ Route::delete('/transaksi/{id}', [transaksiController::class, 'destroy']);
 Route::put('/transaksi/{id}', [transaksiController::class, 'update']);
 
 //Detail Transaksi Route 
-Route::get('/detail-transaksi', [detailTransaksiController::class, 'index']);
+// Route::get('/detail-transaksi', [detailTransaksiController::class, 'index']);
 Route::get('/detail-transaksi/{id}', [detailTransaksiController::class, 'createview']);
 Route::post('/detail-transaksi/{id}', [detailTransaksiController::class, 'create']);
 Route::get('/detail-transaksi/update/{id}', [detailTransaksiController::class, 'updateview']);
-Route::delete('/detail-transaksi/{id}', [detailTransaksiController::class, 'destroy']);
+Route::delete('/detail-transaksi/{id}/{trx}', [detailTransaksiController::class, 'destroy']);
 Route::put('/detail-transaksi/{id}', [detailTransaksiController::class, 'update']);
 Route::get('/detail-transaksi/hargaPerTelur/{id}', [detailTransaksiController::class, 'SatuanHarga']);
 

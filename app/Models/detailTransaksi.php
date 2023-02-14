@@ -22,4 +22,6 @@ class detailTransaksi extends Model
     {
         return $this->belongsTo(telur::class);
     }
+
+
 }

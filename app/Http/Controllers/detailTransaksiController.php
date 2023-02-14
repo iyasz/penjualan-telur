@@ -39,4 +39,11 @@ class detailTransaksiController extends Controller
         return $hargaa;
     }
 
+    public function destroy($id, $trx)
+    {
+        $detail = detailTransaksi::find($id);
+        $detail->delete();
+        return redirect('/detail-transaksi/'.$trx);
+    }
+
 }

@@ -29,4 +29,14 @@ class detailTransaksiController extends Controller
         $create = detailTransaksi::create($request->except('_token', 'submit'));
         return redirect('/detail-transaksi/'.$id);
     }
+
+    
+
+    public function SatuanHarga(Request $request)
+    {
+        $data = telur::select('harga')->where('id', $request->id)->firstOrFail();
+        $hargaa =  response()->json($data);
+        return $hargaa;
+    }
+
 }

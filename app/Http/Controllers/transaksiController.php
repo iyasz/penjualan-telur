@@ -21,7 +21,7 @@ class transaksiController extends Controller
 
     public function create(Request $request)
     {
-        $transaki = 'TRX/TELUR-PAWW/'.date('Ymd').random_int(10000,99999);
+        $transaki = 'TRX/EGG-STORE/'.date('Ymd').random_int(10000,99999);
         $request['no_trx'] = $transaki;
         $request['tgl_trx'] = Carbon::now();
         $trxCreate = transaksi::create($request->except('_token', 'submit'));

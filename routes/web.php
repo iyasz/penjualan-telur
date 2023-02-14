@@ -63,4 +63,5 @@ Route::post('/detail-transaksi/{id}', [detailTransaksiController::class, 'create
 Route::get('/detail-transaksi/update/{id}', [detailTransaksiController::class, 'updateview']);
 Route::delete('/detail-transaksi/{id}', [detailTransaksiController::class, 'destroy']);
 Route::put('/detail-transaksi/{id}', [detailTransaksiController::class, 'update']);
+Route::get('/detail-transaksi/hargaPerTelur/{id}', [detailTransaksiController::class, 'SatuanHarga']);
 

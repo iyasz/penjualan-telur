@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\detailTransaksi;
 use Carbon\Carbon;
 use App\Models\transaksi;
 use Illuminate\Support\Str;
@@ -11,7 +12,7 @@ class transaksiController extends Controller
 {
     public function index()
     {
-        $trx = transaksi::paginate($_GET['p'] ?? 5);
+        $trx = transaksi::paginate($_GET['p'] ?? 10);
         return view('transaksi.transaksi', ['transaksi' => $trx]);
     }
 
@@ -54,7 +55,13 @@ class transaksiController extends Controller
 
     public function detail($id)
     {
+        $detail = detailTransaksi::with('telur.jenis_telur')->where('transaksi_id', $id)->get();
+
+        $detail_data = json_decode($detail);
+        // $telur = detailTransaksi::with('telur.jenis_telur')->get();
+        // dd($detail);
         $trx = transaksi::findOrFail($id);
-        return view('transaksi.detail', ['trx' => $trx]);
+        
+        return view('transaksi.detail', ['data' => $trx, 'detail' => $detail_data]);
     }
 }

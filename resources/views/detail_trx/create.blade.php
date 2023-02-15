@@ -76,7 +76,7 @@
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $data->telur->jenis_telur['nama'] }}</td>
                                         <td>{{ $data->jumlah }}</td>
-                                        <td>{{ $data->total_detail }}</td>
+                                        <td>Rp {{number_format($data->total_detail) }}</td>
                                         <td>
                                             <form action="/detail-transaksi/{{$data->id}}/{{ $transaksi->id }}" method="post">
                                                 @csrf

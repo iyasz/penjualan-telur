@@ -23,5 +23,10 @@ class detailTransaksi extends Model
         return $this->belongsTo(telur::class);
     }
 
+    public function detail_telur()
+    {
+        return $this->hasMany(telur::class);
+    }
+
 
 }

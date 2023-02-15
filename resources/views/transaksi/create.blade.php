@@ -12,6 +12,7 @@
                         <div class="mt-2 mb-3">
                             <label class="mb-2">Nama Lengkap Pemesanan :</label>
                             <input type="text" name="nama" class="form-control" autocomplete="off" id="">
+                            <p class="mb-0 mt-2 ms-2 text-gray fs-sm"><i class="bi bi-question-circle me-1"></i> Syarat Ketentuan </p>
                         </div>
                         <div class="text-end">
                             <button name="submit" class="btn btn-primary">Submit</button>

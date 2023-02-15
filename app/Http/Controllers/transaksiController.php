@@ -11,7 +11,7 @@ class transaksiController extends Controller
 {
     public function index()
     {
-        $trx = transaksi::get();
+        $trx = transaksi::paginate(3);
         return view('transaksi.transaksi', ['transaksi' => $trx]);
     }
 
@@ -35,14 +35,14 @@ class transaksiController extends Controller
 
     public function update($id, Request $request)
     {
-        $imgExtension = $request->file('bukti_transaksi')->getClientOriginalExtension();
+        $imgExtension = $request->file('bukti_trx')->getClientOriginalExtension();
         $imgName = "EGG-BUKTI-PEMBAYARAN".'-'. Str::random(20).$imgExtension;
-        $request->file('bukti_transaksi')->storeAs('bukti-trx', $imgName);
+        $request->file('bukti_trx')->storeAs('bukti-trx', $imgName);
 
         $request['bukti_transaksi'] = $imgName;
 
         $trx = transaksi::find($id);
-        $trx->update($request->except('_token', 'submit', 'bukti_transaksi'));
+        $trx->update($request->except('_token', 'submit', 'bukti_trx'));
         return redirect('/transaksi');
     }
 }

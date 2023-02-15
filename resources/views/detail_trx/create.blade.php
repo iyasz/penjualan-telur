@@ -91,7 +91,11 @@
                             </tbody>
                         </table>
                     </div>
+                </div>
+            </div>
 
+            <div class="card mt-5">
+                <div class="card-body">
                     <form action="/transaksi/{{ $transaksi->id }}" enctype="multipart/form-data" method="post">
                         @csrf
                         @method('put')
@@ -129,7 +133,7 @@
                         </div>
                         <div class="mt-2 mb-3">
                             <label class="mb-2">Bukti Transaksi :</label>
-                            <input type="file" class="form-control" name="bukti_transaksi">
+                            <input type="file" class="form-control" name="bukti_trx">
                         </div>
                         <div class="text-end">
                             <button name="submit" class="btn btn-primary">Submit</button>

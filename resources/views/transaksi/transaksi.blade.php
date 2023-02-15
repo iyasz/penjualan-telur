@@ -4,10 +4,10 @@
     
 @section('content')
     <div class="row">
-        <div class="col-12 mt-5">
-            <h1>Transaksi Room</h1>
+        <div class="col-12 mt-4">
+            <h2>Transaksi Room</h2>
             <div class="text-end">
-                <a href="/transaksi/create" class="btn btn-primary">Create Transaksi</a>
+                <a href="/transaksi/create" class="btn btn-primary fw-">Create Transaksi</a>
             </div>
         </div>
     </div>
@@ -53,7 +53,7 @@
                 </div>
                 <div class="table-responsive">
 
-                    <table class="table">
+                 <table class="table mb-0">
                     <thead>
                         <tr >
                         <th>#</th>
@@ -83,6 +83,26 @@
                     @endforeach
                 </tbody>
             </table>
+            {{-- <nav aria-label="...">
+                <ul class="pagination">
+                  <li class="page-item disabled">
+                    <a class="page-link">Previous</a>
+                  </li>
+                  <li class="page-item"><a class="page-link" href="">1</a></li>
+                  <li class="page-item active" aria-current="page">
+                    <a class="page-link" href="">2</a>
+                  </li>
+                  <li class="page-item"><a class="page-link" href="">3</a></li>
+                  <li class="page-item">
+                    <a class="page-link" href="">Next</a>
+                  </li>
+                </ul>
+              </nav> --}}
+            </div>
+            <div class="bg-white">
+              <div class="pt-3 mx-5">
+                  {{$transaksi->links()}}
+              </div>
             </div>
         </div>
         </div>

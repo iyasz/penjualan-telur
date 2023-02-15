@@ -302,6 +302,10 @@ a {
 -moz-box-shadow: -1px 2px 24px -17px rgba(0,0,0,0.39);
 }
 
+.fs-sm {
+  font-size: 14px !important;
+}
+
 .btn-cancel {
   color: var(--gray-primary);
   background: none;

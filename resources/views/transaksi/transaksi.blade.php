@@ -7,7 +7,7 @@
         <div class="col-12 mt-4">
             <h2>Transaksi Room</h2>
             <div class="text-end">
-                <a href="/transaksi/create" class="btn btn-primary fw-">Create Transaksi</a>
+                <a href="/transaksi/create/pemesanan" class="btn btn-primary ">Create Transaksi</a>
             </div>
         </div>
     </div>
@@ -38,11 +38,11 @@
                                 <div class="col-12 mb-2">
                                     <div class="mx-3">
                                         <p class="mb-1 title-filter">Per halaman</p>
-                                        <select name="" class="form-select form-select-sm text-gray">
+                                        <select name="filterPage" id="paginationFilter" class="form-select form-select-sm text-gray">
                                             <option selected disabled>---</option>
-                                            <option value="">25</option>
-                                            <option value="">50</option>
-                                            <option value="">100</option>
+                                            <option value="25">25</option>
+                                            <option value="50">50</option>
+                                            <option value="100">100</option>
                                         </select>
                                     </div>
                                 </div>
@@ -72,12 +72,8 @@
                         <td>{{$data->nama}}</td>
                         <td>{{ date("d M Y", strtotime($data->tgl_trx)) }}</td>
                         <td class="d-flex ">
-                            <form action="/transaksi/{{$data->id}}" method="post">
-                                @csrf
-                                @method('delete')
-                                <button type="submit" class="btn btn-danger btn-sm">Delete</button>
-                            </form>
-                            <a href="/transaksi/update/{{$data->id}}" class="btn btn-primary btn-sm ">Update</a>
+                                <a href="/transaksi/{{$data->id}}" type="submit" class="btn btn-danger btn-sm text-gray bg-transparent border-0 me-1"><i class="bi bi-info-circle"></i></a>
+                            <a href="/transaksi/update/{{$data->id}}" class="btn btn-primary btn-sm text-gray bg-transparent border-0"><i class="bi bi-pencil-square"></i></a>
                         </td>
                     </tr>
                     @endforeach

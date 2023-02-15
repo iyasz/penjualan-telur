@@ -5,6 +5,7 @@ use App\Http\Controllers\detailTransaksiController;
 use App\Http\Controllers\jenisTelurController;
 use App\Http\Controllers\telurController;
 use App\Http\Controllers\transaksiController;
+use App\Models\transaksi;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -50,10 +51,11 @@ Route::put('/telur/{id}', [telurController::class, 'update']);
 
 // Transaksi Route 
 Route::get('/transaksi', [transaksiController::class, 'index']);
-Route::get('/transaksi/create', [transaksiController::class, 'createview']);
+Route::get('/transaksi/{id}', [transaksiController::class, 'detail']);
+Route::get('/transaksi/create/pemesanan', [transaksiController::class, 'createview']);
 Route::post('/transaksi', [transaksiController::class, 'create']);
 Route::get('/transaksi/update/{id}', [transaksiController::class, 'updateview']);
-Route::delete('/transaksi/{id}', [transaksiController::class, 'destroy']);
+// Route::delete('/transaksi/{id}', [transaksiController::class, 'destroy']);
 Route::put('/transaksi/{id}', [transaksiController::class, 'update']);
 
 //Detail Transaksi Route 

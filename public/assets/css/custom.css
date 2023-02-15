@@ -306,6 +306,10 @@ a {
   font-size: 14px !important;
 }
 
+.read-only {
+  background: var(--bg-primary) !important;
+}
+
 /* popper js  */
 #tooltip {
   background: #333;

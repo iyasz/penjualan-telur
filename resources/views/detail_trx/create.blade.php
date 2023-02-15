@@ -43,11 +43,11 @@
                                             </div>
                                             <div class="mb-3">
                                                 <label>Harga</label>
-                                                <input type="text" id="hargaPerTelur" value="Calculating ..." readonly class="form-control">
+                                                <input type="text" id="hargaPerTelur" value="Calculating ..." readonly class="form-control read-only">
                                             </div>
                                             <div class="mb-3">
                                                 <label>Total</label>
-                                                <input type="number" id="total_harga" readonly class="form-control" name="total_detail">
+                                                <input type="number" id="total_harga" readonly class="form-control read-only" name="total_detail">
                                             </div>
                                             <div class="mb-3">
                                                 <button class="btn btn-primary" name="submit">Submit</button>
@@ -118,7 +118,7 @@
                         </div>
                         <div class="mt-2 mb-3">
                             <label class="mb-2">Harga Total :</label>
-                            <input type="text" class="form-control" readonly value="{{ number_format($hargaTotal) }}">
+                            <input type="text" class="form-control read-only" readonly value="{{ number_format($hargaTotal) }}">
                             <input type="hidden" class="form-control" id="totalAllDetail" readonly value="{{ $hargaTotal }}" name="harga_total">
                         </div>
                         <div class="mt-2 mb-3">
@@ -129,7 +129,7 @@
                         </div>
                         <div class="mt-2 mb-3">
                             <label class="mb-2">Kembalian :</label>
-                            <input type="text" id="kembalianBayar" readonly class="form-control" name="kembalian">
+                            <input type="text" id="kembalianBayar" readonly class="form-control read-only" name="kembalian">
                         </div>
                         <div class="mt-2 mb-3">
                             <label class="mb-2">Bukti Transaksi :</label>

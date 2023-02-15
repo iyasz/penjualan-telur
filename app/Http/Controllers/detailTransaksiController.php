@@ -26,7 +26,15 @@ class detailTransaksiController extends Controller
     public function create($id, Request $request)
     {
         $request['transaksi_id'] = $id;
+        $telur = telur::find($request->telur_id);
+        
+        $telurCalc = $telur['stok'] - $request->jumlah;
+        $telur->update([
+            'stok' => $telurCalc
+        ]);
+        
         $create = detailTransaksi::create($request->except('_token', 'submit'));
+
         return redirect('/detail-transaksi/'.$id);
     }
 
@@ -42,6 +50,13 @@ class detailTransaksiController extends Controller
     public function destroy($id, $trx)
     {
         $detail = detailTransaksi::find($id);
+        $telur = telur::find($detail['telur_id']);
+        
+        $telurCalc = $telur['stok'] + $detail['jumlah'];
+        $telur->update([
+            'stok' => $telurCalc
+        ]);
+
         $detail->delete();
         return redirect('/detail-transaksi/'.$trx);
     }

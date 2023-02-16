@@ -61,4 +61,18 @@ class detailTransaksiController extends Controller
         return redirect('/detail-transaksi/'.$trx);
     }
 
+    public function updateview($id)
+    {
+        $trx = transaksi::find($id);
+        return view('detail_trx.update', ['transaksi' => $trx]);
+    }
+
+    public function update($id, Request $request)
+    {
+        $trx = transaksi::find($id);
+        $trx->update([
+            'status' => $request->status
+        ]);
+        return redirect('/transaksi');
+    }
 }

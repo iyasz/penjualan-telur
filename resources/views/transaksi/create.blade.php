@@ -16,7 +16,7 @@
                                 Ketika Nama Pemesanan Sudah Disubmit, <br> Dilarang kembali sebelum mengisi detail pesanan nya!
                                 <div id="arrow" data-popper-arrow></div>
                             </div>
-                            <p  class="mb-0 mt-2 ms-2 text-gray fs-sm"><i aria-describedby="tooltip" id="button" class="bi bi-question-circle me-1"></i> Syarat Ketentuan </p>
+                            <p  class="mb-0 mt-2 ms-2 text-gray fs-sm"><i data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Ketika Nama Pemesanan Sudah Disubmit,Dilarang kembali sebelum mengisi detail pesanan nya!" id="button" class="bi bi-question-circle me-1"></i> Syarat Ketentuan </p>
                         </div>
                         <div class="text-end">
                             <button  name="submit" class="btn btn-primary">Buat</button>

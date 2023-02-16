@@ -52,14 +52,14 @@
                
                 </div>
                 <div class="table-responsive">
-
-                 <table class="table mb-0">
+                 <table class="table mb-0" width="100%">
                     <thead>
                         <tr >
                         <th>#</th>
                         <th>No Invoice</th>
                         <th>Nama Pemesanan</th>
                         <th>Tanggal Transaksi</th>
+                        <th>Status</th>
                         <th></th>
                     </tr>
                 </thead>
@@ -71,9 +71,11 @@
                         <td>{{$data->no_trx}}</td>
                         <td>{{$data->nama}}</td>
                         <td>{{ date("d M Y", strtotime($data->tgl_trx)) }}</td>
+                        <td class=""><div class="@if($data->status == '1')status status-benar @elseif( $data->status == '2')status status-pending @else status status-salah @endif"> @if($data->status == '1') Success @elseif( $data->status == '2') Pending @else Canceled @endif</div> </td>
                         <td class="d-flex ">
                                 <a href="/transaksi/{{$data->id}}" type="submit" class="btn btn-danger btn-sm text-gray bg-transparent border-0 me-1"><i class="bi bi-info-circle"></i></a>
-                            <a href="/transaksi/update/{{$data->id}}" class="btn btn-primary btn-sm text-gray bg-transparent border-0"><i class="bi bi-pencil-square"></i></a>
+
+                            <a href="/detail-transaksi/update/{{$data->id}}" class="btn btn-primary btn-sm text-gray bg-transparent border-0"><i class="bi bi-pencil-square"></i></a>
                         </td>
                     </tr>
                     @endforeach

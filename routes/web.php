@@ -43,6 +43,7 @@ Route::post('/jenis-telur/{id}', [jenisTelurController::class, 'restore']);
 
 // Telur Route 
 Route::get('/telur', [telurController::class, 'index']);
+Route::get('/telur/{id}', [telurController::class, 'detail']);
 Route::get('/telur/create', [telurController::class, 'createview']);
 Route::post('/telur', [telurController::class, 'create']);
 Route::get('/telur/update/{id}', [telurController::class, 'updateview']);

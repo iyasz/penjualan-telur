@@ -23,26 +23,26 @@
                             <label class="mb-2">Cara Bayar :</label>
                             <select disabled name="cara_bayar" class="form-select">
                                 <option value="" selected>---</option>
-                                <option value="1">Cash</option>
-                                <option value="2">Transfer</option>
+                                <option  @if($transaksi->cara_bayar == 1) selected @endif value="1">Cash</option>
+                                <option  @if($transaksi->cara_bayar == 2) selected @endif value="2">Transfer</option>
                             </select>
                         </div>
                         <div class="mt-2 mb-3">
                             <label class="mb-2">Harga Total :</label>
-                            <input type="text" class="form-control" disabled value="">
-                            <input type="hidden" class="form-control" disabled value="" >
+                            <input type="text" class="form-control" disabled value="{{number_format($transaksi->harga_total)}}">
                         </div>
                         <div class="mt-2 mb-3">
                             <label class="mb-2">Sejumlah :</label>
-                            <input type="currency" id="rupiah" class="form-control" disabled>
+                            <input type="currency"  value="{{number_format($transaksi->uang_masuk)}}" id="rupiah" class="form-control" disabled>
                         </div>
                         <div class="mt-2 mb-3">
                             <label class="mb-2">Kembalian :</label>
-                            <input type="text" disabled class="form-control" >
+                            <input type="text" disabled  value="@if($transaksi->kembalian < 0)Kurang {{number_format($transaksi->kembalian)}} @else {{number_format($transaksi->kembalian)}} @endif" class="form-control" >
                         </div>
                         <div class="mt-2 mb-3">
                             <label class="mb-2">Bukti Transaksi :</label>
-                            <input type="file" class="form-control" disabled name="bukti_trx">
+                            <input type="file" class="form-control" disabled>
+                            <label class="mt-2 me-5 label-input"> <img src=" {{asset('storage/bukti-trx/'.$transaksi->bukti_transaksi)}} " width="150px"></label>
                         </div>
                         <div class="text-end">
                             <button name="submit" class="btn btn-primary">Submit</button>

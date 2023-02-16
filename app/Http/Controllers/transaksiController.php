@@ -48,6 +48,8 @@ class transaksiController extends Controller
 
         $request['bukti_transaksi'] = $imgName;
 
+
+
         $trx = transaksi::find($id);
         $trx->update($request->except('_token', 'submit', 'bukti_trx'));
         return redirect('/transaksi');

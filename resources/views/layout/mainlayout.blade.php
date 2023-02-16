@@ -29,20 +29,6 @@
 
   <header class="header" id="header">
     <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
-
-    {{-- <div class="dropdown ">
-        <a class="btn btn-secondary dropdown-toggle" href="/admin" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-            <img class="header_img" src="/assets/img/arisu.JPG" alt="">
-            <i class='bx bxs-user-circle'></i>
-        </a>
-      
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-          <li><a class="dropdown-item" href="#">Action</a></li>
-          <li><a class="dropdown-item" href="#">Another action</a></li>
-          <li><a class="dropdown-item" href="#">Something else here</a></li>
-        </ul>
-      </div> --}}
-
     <div class="header_img">
         <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
             <img class="img_primary" src="/assets/img/arisu.jpg" alt="">
@@ -58,7 +44,7 @@
 <div class="l-navbar" id="nav-bar">
     <nav class="nav">
         <div> <a href="/" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span
-                    class="nav_logo-name "><img src="/assets/img/logo.png" width="110px" alt=""></span> </a>
+                    class="nav_logo-name ">EGGSTORE</span> </a>
             <div class="nav_list">
                 <a href="/" class="nav_link @yield('dsh')"> <i
                         class='bx bx-bar-chart-alt-2 @yield('icdsh') nav_icon'></i> <span
@@ -75,13 +61,12 @@
                 </a>
             </div>
         </div>
-        <hr class="mx-3 hr-nav mb-0">
+        {{-- jika ingin menambah log out  --}}
+        {{-- <hr class="mx-3 hr-nav mb-0">
         <div class=" mt-0 position-relative">
-            {{-- <a href="" class="nav_link mb-2"><i class='bx bx-cog nav_icon'></i> <span
-                    class="nav_name">Settings</span></a> --}}
             <a href="/logout" class="nav_link "><i class='bx bx-log-out nav_icon icon-bot'></i> <span
                     class="nav_name name-bot">Log Out</span> </a>
-        </div>
+        </div> --}}
     </nav>
 </div>
 <!--Container Main start-->

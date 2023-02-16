@@ -57,20 +57,22 @@
                                 </div>
                             </div>
                         </div>
-                        <table class="table mt-4">
-                            <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>Jenis Telur</th>
-                                    <th>Jumlah</th>
-                                    <th>Total</th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <span class="d-none">{{ $hargaTotal = 0 }}</span>
+                        <div class="table-responsive">
 
-                                @foreach ($detail as $data)
+                            <table class="table mt-4">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Jenis Telur</th>
+                                        <th>Jumlah</th>
+                                        <th>Total</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <span class="d-none">{{ $hargaTotal = 0 }}</span>
+                                    
+                                    @foreach ($detail as $data)
                                     <span class="d-none">{{ $hargaTotal += $data->total_detail }}</span>
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
@@ -84,12 +86,13 @@
                                                 <button class="btn btn-danger btn-sm">Delete</button>
                                             </form>
                                         </td>
-
+                                        
                                     </tr>
-                                @endforeach
-
-                            </tbody>
-                        </table>
+                                    @endforeach
+                                    
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>

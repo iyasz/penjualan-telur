@@ -10,7 +10,7 @@ class telurController extends Controller
 {
     public function index()
     {
-        $telur = telur::get();
+        $telur = telur::paginate(10);
         return view('telur.telur', ['telur' => $telur]);
     }
 
@@ -31,6 +31,13 @@ class telurController extends Controller
         $telur = telur::find($id);
         $telur->delete();
         return redirect('/telur');
+    }
+
+    public function detail($id)
+    {
+        $telur = telur::findOrFail($id);
+        $jenis = jenis_telur::all()->where('id', $telur['jenis_telur_id'])->firstOrFail();
+        return view('telur.detail', ['data' => $telur, 'jenis' => $jenis]);
     }
 
     public function updateview($id)

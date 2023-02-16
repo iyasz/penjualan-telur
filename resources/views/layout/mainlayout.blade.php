@@ -29,7 +29,9 @@
 
   <header class="header" id="header">
     <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
-    <div class="header_img">
+
+    {{-- jika ingin memakai profil  --}}
+    {{-- <div class="header_img">
         <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
             <img class="img_primary" src="/assets/img/arisu.jpg" alt="">
         </button>
@@ -39,7 +41,7 @@
             <li><a class="dropdown-item text-gray" href="#">Profil <i class='bx bx-chevron-right'></i></a></li>
             <li><a class="dropdown-item text-gray" href="#">Setting <i class='bx bx-chevron-right'></i></a></li>
           </ul>
-    </div>
+    </div> --}}
 </header>
 <div class="l-navbar" id="nav-bar">
     <nav class="nav">

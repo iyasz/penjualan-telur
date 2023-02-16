@@ -9,7 +9,7 @@ class jenisTelurController extends Controller
 {
     public function index()
     {
-        $jenis = jenis_telur::get();
+        $jenis = jenis_telur::paginate(10);
 
         return view('jenis_telur.jenis_telur', ['jenis' => $jenis]);
     }
@@ -59,5 +59,11 @@ class jenisTelurController extends Controller
     {
         $jenis = jenis_telur::withTrashed()->where('id', $id)->restore();
         return redirect('/jenis-telur');
+    }
+
+    public function detail($id)
+    {
+        $jenis = jenis_telur::findOrFail($id);
+        return view('jenis_telur.detail', ['data' => $jenis]);
     }
 }

@@ -33,6 +33,7 @@ Route::put('/admin/{id}', [adminController::class, 'update']);
 
 // Jenis Telur Route 
 Route::get('/jenis-telur', [jenisTelurController::class, 'index']);
+Route::get('/jenis-telur/{id}', [jenisTelurController::class, 'detail']);
 Route::get('/jenis-telur/create', [jenisTelurController::class, 'createview']);
 Route::post('/jenis-telur', [jenisTelurController::class, 'create']);
 Route::get('/jenis-telur/update/{id}', [jenisTelurController::class, 'updateview']);

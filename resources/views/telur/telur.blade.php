@@ -99,8 +99,8 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="bg-white footer-table">
-                    <div class="pt-3 mx-5">
+                <div class="bg-white footer-table d-flex d-md-block d-lg-block justify-content-center">
+                    <div class="pt-3 mx-0 mx-md-5 mx-lg-5">
                         {{ $telur->links() }}
                     </div>
                 </div>

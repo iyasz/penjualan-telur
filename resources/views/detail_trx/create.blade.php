@@ -26,7 +26,7 @@
                                             @csrf
                                             <div class="mb-3">
                                                 <label class="mb-2">Jenis Telur :</label>
-                                                <select name="telur_id" id="selectTelur"  class="form-select">
+                                                <select name="telur_id" id="selectTelur"  class="form-select  @error('telur_id') is-invalid @enderror">
                                                     <option value="" selected>---</option>
                                                     <span class="d-none">{{ $harga = 0 }}</span>
                                                     @foreach ($jenis as $jenisTelur)
@@ -36,10 +36,12 @@
                                                         </option>
                                                     @endforeach
                                                 </select>
+                                               @error('telur_id') <p class="mb-0 text-danger fs-sm">{{$message}}</p> @enderror
                                             </div>
                                             <div class="mb-3">
                                                 <label>Jumlah</label>
-                                                <input type="currency"  id="jmlhTelur" name="jumlah" class="form-control">
+                                                <input type="currency"  id="jmlhTelur" name="jumlah" class="form-control  @error('jumlah') is-invalid @enderror">
+                                               @error('jumlah') <p class="mb-0 text-danger fs-sm">{{$message}}</p> @enderror
                                             </div>
                                             <div class="mb-3">
                                                 <label>Harga</label>
@@ -104,20 +106,22 @@
                         @method('put')
                         <div class="mt-2 mb-3">
                             <label class="mb-2">Status :</label>
-                            <select name="status" class="form-select">
+                            <select name="status" class="form-select @error('status') is-invalid @enderror">
                                 <option value="" selected>---</option>
                                 <option value="1">Success</option>
                                 <option value="2">Pending</option>
                                 <option value="3">Canceled</option>
                             </select>
+                            @error('status') <p class="mb-0 text-danger fs-sm">{{$message}}</p> @enderror
                         </div>
                         <div class="mt-2 mb-3">
                             <label class="mb-2">Cara Bayar :</label>
-                            <select name="cara_bayar" class="form-select">
+                            <select name="cara_bayar" class="form-select @error('cara_bayar') is-invalid @enderror">
                                 <option value="" selected>---</option>
                                 <option value="1">Cash</option>
                                 <option value="2">Transfer</option>
                             </select>
+                            @error('cara_bayar') <p class="mb-0 text-danger fs-sm">{{$message}}</p> @enderror
                         </div>
                         <div class="mt-2 mb-3">
                             <label class="mb-2">Harga Total :</label>
@@ -126,9 +130,9 @@
                         </div>
                         <div class="mt-2 mb-3">
                             <label class="mb-2">Sejumlah :</label>
-                            <input type="currency" id="rupiah" class="form-control" >
+                            <input type="currency" id="rupiah" class="form-control  @error('uang_masuk') is-invalid @enderror" >
                             <input type="hidden" id="jumlahBayar" class="form-control" name="uang_masuk">
-                            {{-- <input type="text" id="rupiahCalc" class="form-control" name="uang_masuk"> --}}
+                            @error('uang_masuk') <p class="mb-0 text-danger fs-sm">{{$message}}</p> @enderror
                         </div>
                         <div class="mt-2 mb-3">
                             <label class="mb-2">Kembalian :</label>
@@ -136,7 +140,8 @@
                         </div>
                         <div class="mt-2 mb-3">
                             <label class="mb-2">Bukti Transaksi :</label>
-                            <input type="file" class="form-control" name="bukti_trx">
+                            <input type="file" class="form-control @error('bukti_trx') is-invalid @enderror" name="bukti_trx">
+                            @error('bukti_trx') <p class="mb-0 text-danger fs-sm">{{$message}}</p> @enderror
                         </div>
                         <div class="text-end">
                             <button name="submit" class="btn btn-primary">Submit</button>

@@ -34,6 +34,11 @@ class transaksiController extends Controller
         $transaki = 'TRX/EGG-STORE/'.date('Ymd').random_int(10000,99999);
         $request['no_trx'] = $transaki;
         $request['tgl_trx'] = Carbon::now();
+        $rules = [
+            'nama' => 'required',
+        ];
+
+        $validated = $request->validate($rules);
         $trxCreate = transaksi::create($request->except('_token', 'submit'));
         $trx_id = $trxCreate->id;
 
@@ -42,12 +47,19 @@ class transaksiController extends Controller
 
     public function update($id, Request $request)
     {
+        $rules = [
+            'status' => 'required',
+            'cara_bayar' => 'required',
+            'uang_masuk' => 'required',
+            'bukti_trx' => 'required',
+        ];
+
+        $validated = $request->validate($rules);
         $imgExtension = $request->file('bukti_trx')->getClientOriginalExtension();
         $imgName = "EGG-BUKTI-PEMBAYARAN".'-'. Str::random(20).'.'.$imgExtension;
         $request->file('bukti_trx')->storeAs('bukti-trx', $imgName);
 
         $request['bukti_transaksi'] = $imgName;
-
 
 
         $trx = transaksi::find($id);

@@ -15,6 +15,7 @@ class detailTransaksiController extends Controller
         $jenis = telur::with('jenis_telur')->get();
         // $trx_id = transaksi::all($id);
         $trx_id = transaksi::with('detail')->get()->find($id);
+        
         $detail_trx = detailTransaksi::with('telur.jenis_telur')->get()->where('transaksi_id', $id);
         $transaksi_id = transaksi::find($id);
         return view('detail_trx.create',['trx' => $trx_id,
@@ -27,6 +28,14 @@ class detailTransaksiController extends Controller
     {
         $request['transaksi_id'] = $id;
         $telur = telur::find($request->telur_id);
+
+        $rules = [
+            'telur_id' => 'required',
+            'jumlah' => 'required',
+            'total_detail' => 'required',
+        ];
+
+        $validated = $request->validate($rules);
         
         $telurCalc = $telur['stok'] - $request->jumlah;
         $telur->update([
@@ -70,6 +79,11 @@ class detailTransaksiController extends Controller
     public function update($id, Request $request)
     {
         $trx = transaksi::find($id);
+        $rules = [
+            'status' => 'required',
+        ];
+
+        $validated = $request->validate($rules);
         $trx->update([
             'status' => $request->status
         ]);

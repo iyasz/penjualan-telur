@@ -12,12 +12,13 @@
                         @method('put')
                         <div class="mt-2 mb-3">
                             <label class="mb-2">Status :</label>
-                            <select name="status" class="form-select">
+                            <select name="status" class="form-select  @error('status') is-invalid @enderror">
                                 <option value="" selected>---</option>
                                 <option @if($transaksi->status == 1) selected @endif value="1">Success</option>
                                 <option @if($transaksi->status == 2) selected @endif value="2">Pending</option>
                                 <option @if($transaksi->status == 3) selected @endif value="3">Canceled</option>
                             </select>
+                            @error('status') <p class="mb-0 text-danger fs-sm">{{$message}}</p> @enderror
                         </div>
                         <div class="mt-2 mb-3">
                             <label class="mb-2">Cara Bayar :</label>

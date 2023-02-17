@@ -73,7 +73,7 @@
                                     <td>{{$data->username}}</td>
                                     <td>{{$data->password}}</td>
                                     <td class="d-flex ">
-                                        <a href="/admin/{{ $data->id }}" type="submit" class="btn btn-danger btn-sm text-gray bg-transparent border-0 "><i class="bi bi-info-circle"></i></a>
+                                        <a href="/admin/{{ $data->id }}/detail" type="submit" class="btn btn-danger btn-sm text-gray bg-transparent border-0 "><i class="bi bi-info-circle"></i></a>
                                         <form action="/admin/{{ $data->id }}" method="post">
                                                     @csrf
                                                     @method('delete')

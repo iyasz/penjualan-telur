@@ -69,7 +69,7 @@
                                     <td>{{ $loop->iteration}}</td>
                                     <td>{{$data->nama}}</td>
                                     <td class="d-flex ">
-                                        <a href="/jenis-telur/{{ $data->id }}" type="submit" class="btn btn-danger btn-sm text-gray bg-transparent border-0 "><i class="bi bi-info-circle"></i></a>
+                                        <a href="/jenis-telur/{{ $data->id }}/detail" type="submit" class="btn btn-danger btn-sm text-gray bg-transparent border-0 "><i class="bi bi-info-circle"></i></a>
                                         <form action="/jenis-telur/{{ $data->id }}" method="post">
                                                     @csrf
                                                     @method('delete')

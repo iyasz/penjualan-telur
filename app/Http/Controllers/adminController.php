@@ -26,6 +26,14 @@ class adminController extends Controller
         $tokenRandom = Str::random(7) .'-'.date('Ymd'). Str::random(5) .'-'. Str::random(12).'-'.Str::random(5);
 
         $request['token'] = $tokenRandom;
+
+        $rules = [
+            'nama' => 'required',
+            'username' => 'required',
+            'password' => 'required',
+        ];
+
+        $validated = $request->validate($rules);
         
         admin::create($request->except('_token', 'submit'));
 
@@ -51,6 +59,14 @@ class adminController extends Controller
     public function update($id, Request $request)
     {
         $admin = admin::find($id);
+
+        $rules = [
+            'nama' => 'required',
+            'username' => 'required',
+            'password' => 'required',
+        ];
+
+        $validated = $request->validate($rules);
 
         $admin->update($request->except('_token', 'submit'));
 

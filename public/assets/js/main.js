@@ -82,86 +82,24 @@ $('#jmlhTelur').on('keyup', function() {
 
 // end total 
 
+// loader 
 
-// function password_show_hide() {
-//     var x = document.getElementById("inputPassword");
-//     var show_eye = document.getElementById("showEye");
-//     var hide_eye = document.getElementById("hideEye");
-//     hide_eye.classList.remove("d-none");
-//     if (x.type === "password") {
-//       x.type = "text";
-//       show_eye.style.display = "block";
-//       hide_eye.style.display = "none";
-//     } else {
-//       x.type = "password";
-//       show_eye.style.display = "none";
-//       hide_eye.style.display = "block";
-//     }
-//   }
-
-// end login 
-
-
-// const ctx = document.getElementById("myChart");
-// const plugin = {
-//   id: 'customCanvasBackgroundColor',
-//   beforeDraw: (chart, args, options) => {
-//     const {ctx} = chart;
-//     ctx.save();
-//     ctx.globalCompositeOperation = 'destination-over';
-//     ctx.fillStyle = options.color || '#fff';
-//     ctx.fillRect(0, 0, chart.width, chart.height);
-//     ctx.restore();
-//   }
-// };
-
-// new Chart(ctx, {
-//     type: "bar",
-//     data: {
-//         labels: ["2018", "2019", "2020", "2021", "2022", "2023"],
-//         datasets: [
-//             {
-//                 label: "Total",
-//                 data: [563, 497, 548, 611, 571, 640],
-//                 borderWidth: 1,
-//             },
-//         ],
-//     },
-//     options: {
-
-//         scales: {
-//             y: {
-//                 beginAtZero: true,
-//             },
-//         },
-//         plugins: {
-//           customCanvasBackgroundColor: {
-//             color: 'white',
-//           }
-//         },
-//     },
-//     plugins: [plugin],
-// });
-
-// end chart js
-
-// swiper js
-
-// const swiper = new Swiper(".swiper", {
-//     direction: "horizontal",
-//     spaceBetween: 50,
-//     breakpoints: {
-//         767: {
-//             slidesPerView: 1,
-//         },
-//         1024: {
-//             slidesPerView: 2,
-//             spaceBetween: 30,
-//         },
-//     },
-// });
-
-// end swiper js
+$(document).ready(function () {
+    // Show the loader when the page is first loaded
+    $(".loader").show();
+  
+    // Hide the loader after a delay (3 seconds in this example)
+    setTimeout(function () {
+      $(".loader").hide();
+    }, 500);
+  });
+  
+  // Show the loader when the window is reloaded
+//   $(window).on("beforeunload", function () {
+//     $(".loader").show();
+//   });
+  
+  //end loader 
 
 // live search bootstrap 
 
@@ -206,9 +144,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 // end sidebar
 
-
-
-
 // Rupiah Convert Input 
 
 var rupiah = document.getElementById("rupiah");
@@ -220,7 +155,6 @@ rupiah.addEventListener("keyup", function(e) {
   rupiah.value = formatRupiah(this.value, "");
 
 });
-
 
 /* Fungsi formatRupiah */
 function formatRupiah(angka, prefix) {

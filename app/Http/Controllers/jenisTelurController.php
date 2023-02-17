@@ -21,6 +21,11 @@ class jenisTelurController extends Controller
 
     public function create(Request $request)
     {
+        $rules = [
+            'nama' => 'required',
+        ];
+
+        $validated = $request->validate($rules);
         jenis_telur::create($request->except('_token', 'submit'));
 
         return redirect('/jenis-telur');
@@ -43,6 +48,12 @@ class jenisTelurController extends Controller
     public function update($id, Request $request)
     {
         $jenis = jenis_telur::find($id);
+
+        $rules = [
+            'nama' => 'required',
+        ];
+
+        $validated = $request->validate($rules);
 
         $jenis->update($request->except('_token', 'submit'));
 

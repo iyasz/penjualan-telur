@@ -13,7 +13,8 @@
                         @method('put')
                         <div class="mt-2 mb-3">
                             <label class="mb-2">Nama Jenis :</label>
-                            <input type="text" value="{{$jenis->nama}}" name="nama" class="form-control" id="">
+                            <input type="text" value="{{$jenis->nama}}" name="nama" class="form-control  @error('nama') is-invalid @enderror" id="">
+                            @error('nama') <p class="mb-0 text-danger fs-sm">{{$message}}</p> @enderror
                         </div>
                         <div class="text-end">
                             <button name="submit" class="btn btn-primary">Submit</button>

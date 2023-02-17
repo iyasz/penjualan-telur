@@ -22,6 +22,15 @@ class telurController extends Controller
 
     public function create(Request $request)
     {
+        $rules = [
+            'jenis_telur_id' => 'required',
+            'harga' => 'required',
+            'stok' => 'required',
+            'status' => 'required',
+        ];
+
+        $validated = $request->validate($rules);
+
         telur::create($request->except('_token', 'submit'));
         return redirect('/telur');
     }
@@ -50,6 +59,14 @@ class telurController extends Controller
     public function update($id, Request $request)
     {
         $telur = telur::find($id);
+        $rules = [
+            'jenis_telur_id' => 'required',
+            'harga' => 'required',
+            'stok' => 'required',
+            'status' => 'required',
+        ];
+
+        $validated = $request->validate($rules);
         $telur->update($request->except('_token', 'submit'));
         return redirect('/telur');
     }

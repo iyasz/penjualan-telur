@@ -68,14 +68,6 @@
                                 <tr class="text-gray">
                                     <td>{{ $loop->iteration}}</td>
                                     <td>{{$data->nama}}</td>
-                                    {{-- <td class="d-flex ">
-                                        <form action="/jenis-telur/{{$jenis_telur->id}}" method="post">
-                                            @csrf
-                                            @method('delete')
-                                            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
-                                        </form>
-                                        <a href="/jenis-telur/update/{{$jenis_telur->id}}" class="btn btn-primary btn-sm ">Update</a>
-                                    </td> --}}
                                     <td class="d-flex ">
                                         <a href="/jenis-telur/{{ $data->id }}" type="submit" class="btn btn-danger btn-sm text-gray bg-transparent border-0 "><i class="bi bi-info-circle"></i></a>
                                         <form action="/jenis-telur/{{ $data->id }}" method="post">

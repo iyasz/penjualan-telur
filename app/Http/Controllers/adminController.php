@@ -10,7 +10,7 @@ class adminController extends Controller
 {
     public function index()
     {
-        $admin = admin::get();
+        $admin = admin::paginate(10);
 
         return view('admin.admin', ['dataAdmin' => $admin]);
     }
@@ -55,5 +55,11 @@ class adminController extends Controller
         $admin->update($request->except('_token', 'submit'));
 
         return redirect('/admin');
+    }
+
+    public function detail($id)
+    {
+        $admin = admin::findOrFail($id);
+        return view('admin.detail', ['data' => $admin]);
     }
 }

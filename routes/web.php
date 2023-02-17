@@ -25,6 +25,7 @@ Route::get('/', function () {
 
 // admin route 
 Route::get('/admin', [adminController::class, 'index']);
+Route::get('/admin/{id}', [adminController::class, 'detail']);
 Route::get('/admin/create', [adminController::class, 'createview']);
 Route::post('/admin', [adminController::class, 'create']);
 Route::get('/admin/update/{id}', [adminController::class, 'updateview']);
